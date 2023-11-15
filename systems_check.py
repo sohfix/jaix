@@ -8,3 +8,11 @@ def check_gpu():
         if torch.cuda.is_available()
         else "Wow, it works. Engines at full brew, Caption."
     )
+
+
+def check_ram():
+    pass
+
+
+def check_cpu():
+    pass

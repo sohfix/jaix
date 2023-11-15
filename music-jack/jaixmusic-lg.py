@@ -1,7 +1,8 @@
-from transformers import pipeline
-from systems_check import check_gpu
 import scipy.io.wavfile
-from printy import printy, inputy
+from printy import inputy
+from transformers import pipeline
+
+from systems_check import check_gpu
 
 check_gpu()
 config = {

@@ -1,7 +1,5 @@
-from transformers import AutoProcessor, MusicgenForConditionalGeneration
-import torch
 import scipy.io.wavfile
-import numpy as np
+from transformers import AutoProcessor, MusicgenForConditionalGeneration
 
 processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
 model = MusicgenForConditionalGeneration.from_pretrained("facebook/musicgen-small")
