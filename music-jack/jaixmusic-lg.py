@@ -1,28 +1,34 @@
 import scipy.io.wavfile
-from printy import inputy
+import time
 from transformers import pipeline
+# todo: add a check for GPU
+from SysManager.systems_check import check_gpu, log_text
 
-from SysManager.systems_check import check_gpu
+
+start = time.time()
 
 check_gpu()
+prompt = 'robot metal hardstyle bass ethereal'
 
-prompt = None  # inputy("Enter the prompt: ", "Ic")
+with open("song_p.txt", "r") as f:
+    for i in range(1,2):
+        while prompt:
+            prompt = f.readline()
+            print(prompt)
+            log_text(f'test run{i} - prompt:{prompt} >',)
 
-with open("music-jack/jaixmusic-sm.py", "r") as f:
-    prompt = f.read()
 
-config = {
-    "file": prompt[10:],
-}
-# Initialize the text-to-audio pipeline
-synthesiser = pipeline("text-to-audio", "facebook/musicgen-large")
 
-# Generate the music
-music = synthesiser(f"{prompt}", forward_params={"do_sample": True})
+            synthesiser = pipeline("text-to-audio", "facebook/musicgen-large")
 
-# Write the generated music to a WAV file
-scipy.io.wavfile.write(
-    f"music/{config['file'][10:]}.wav".replace(" ", "_"),
-    rate=music["sampling_rate"],
-    data=music["audio"],
-)
+            music = synthesiser(f"{prompt}", forward_params={"do_sample": True})
+
+            scipy.io.wavfile.write(
+                f"music-m/files-m-{i}.wav".replace(" ", "_"),
+                rate=music["sampling_rate"],
+                data=music["audio"],
+            )
+
+end = time.time()
+print(f'Elapsed time: {end - start}')
+log_text(f'Elapsed time: {end - start}')

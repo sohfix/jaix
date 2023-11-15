@@ -1,1 +1,41 @@
-# Testing Log st[1114:1114] 2019-12-03 15:47:00,000 INFO  [main] org.apache.hadoop.mapred.MiniMRCluster: Shutting down the MiniMRCluster
+# Testing Log st[1114:1114] 2019-12-03 15:47:00,000 INFO  [main] org.apache.hadoop.mapred.MiniMRCluster: Shutting down the MiniMRCluster[2023-11-14 23:17:47]: test run0 - prompt:make a song about a bunch of fart
+ >
+[2023-11-14 23:22:43]: test run0 - prompt:so many farts farts every where
+ >
+[2023-11-14 23:27:16]: test run0 - prompt:someone having a ton of diarrhea
+ >
+[2023-11-14 23:31:51]: test run0 - prompt:ethereal space ephemeral music
+ >
+[2023-11-14 23:36:24]: test run0 - prompt:jazz from the 1920s
+ >
+[2023-11-14 23:41:05]: test run0 - prompt:1940s jazz
+ >
+[2023-11-14 23:45:32]: test run0 - prompt:1800s music
+ >
+[2023-11-14 23:50:17]: test run0 - prompt:classical piano
+ >
+[2023-11-14 23:54:47]: test run0 - prompt:piano bass rap song
+ >
+[2023-11-14 23:59:32]: test run0 - prompt:piano song with ethereal vocals
+ >
+[2023-11-15 00:04:12]: test run0 - prompt:hardstyle bass ethereal 
+ >
+[2023-11-15 00:09:09]: test run0 - prompt:hardstyle the crow film nine inch nales
+ >
+[2023-11-15 00:13:37]: test run0 - prompt:nine inch nales
+ >
+[2023-11-15 00:18:32]: test run0 - prompt: >
+[2023-11-15 08:26:07]: test run0 - prompt:make a song about a bunch of fart
+ >
+[2023-11-15 10:09:21]: test run1 - prompt:space music
+ >
+[2023-11-15 10:25:08]: test run1 - prompt:other worldly music
+ >
+[2023-11-15 10:44:41]: test run1 - prompt:acdc
+ >
+[2023-11-15 11:00:11]: test run1 - prompt:def leppard
+ >
+[2023-11-15 11:19:04]: test run1 - prompt:moby >
+[2023-11-15 11:35:37]: test run1 - prompt: >
+[2023-11-15 12:30:11]: test run1 - prompt:lofi country
+ >
