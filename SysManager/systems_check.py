@@ -16,3 +16,16 @@ def check_ram():
 
 def check_cpu():
     pass
+
+
+import datetime
+
+
+def log_text(text, filename="logs/testing_log.txt"):
+    # Get the current date and time
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Open the file in append mode
+    with open(filename, "a") as file:
+        # Write the log entry
+        file.write(f"[{current_time}]: {text}\n")
