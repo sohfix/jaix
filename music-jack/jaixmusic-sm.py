@@ -1,7 +1,9 @@
 from transformers import pipeline
 import scipy.io.wavfile
 from printy import printy, inputy
+from systems_check import check_gpu
 
+check_gpu()
 config = {
     "prompt": inputy("Enter the prompt: ", "y"),
 }

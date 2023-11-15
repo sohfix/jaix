@@ -2,7 +2,7 @@ import torch
 
 
 # print(torch.cuda.is_available())  # Should return True if the GPU is available
-def alpha():
+def check_gpu():
     return (
         "Fucking shit's at half capacity, boss."
         if torch.cuda.is_available()
