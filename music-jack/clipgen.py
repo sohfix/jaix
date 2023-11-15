@@ -9,12 +9,16 @@ output_audio = "musicgen_out1"
 input_prompt = "bassy trap electronic bassnectar"
 
 inputs = processor(
-    text=["lofi girl bass trap hardstyle",],
+    text=[
+        "lofi girl bass trap hardstyle",
+    ],
     padding=True,
     return_tensors="pt",
 )
 
-audio_values = model.generate(**inputs, do_sample=True, guidance_scale=3, max_new_tokens=256)
+audio_values = model.generate(
+    **inputs, do_sample=True, guidance_scale=3, max_new_tokens=256
+)
 audio_numpy = audio_values.cpu().numpy()  # Convert tensor to numpy array
 
 # Save the audio to a file
