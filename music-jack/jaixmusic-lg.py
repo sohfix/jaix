@@ -1,25 +1,26 @@
-import scipy.io.wavfile
 import time
+
+import scipy.io.wavfile
 from transformers import pipeline
+
 # todo: add a check for GPU
 from SysManager.systems_check import check_gpu, log_text
 
-
-start = time.time()
+start, modelj, prompt = time.time(), "large", None
 
 check_gpu()
-prompt = 'robot metal hardstyle bass ethereal'
+
 
 with open("song_p.txt", "r") as f:
-    for i in range(1,2):
+    for i in range(1, 2):
         while prompt:
             prompt = f.readline()
             print(prompt)
-            log_text(f'test run{i} - prompt:{prompt} >',)
+            log_text(
+                f"test run{i} | model: {modelj} - prompt:{prompt} >",
+            )
 
-
-
-            synthesiser = pipeline("text-to-audio", "facebook/musicgen-large")
+            synthesiser = pipeline("text-to-audio", f"facebook/musicgen-{modelj}")
 
             music = synthesiser(f"{prompt}", forward_params={"do_sample": True})
 
@@ -30,5 +31,5 @@ with open("song_p.txt", "r") as f:
             )
 
 end = time.time()
-print(f'Elapsed time: {end - start}')
-log_text(f'Elapsed time: {end - start}')
+print(f"Elapsed time: {end - start}")
+log_text(f"Elapsed time: {end - start}")
