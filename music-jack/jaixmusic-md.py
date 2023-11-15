@@ -6,7 +6,7 @@ config = {
     "prompt": inputy('Enter the prompt: ', 'y'),
 }
 # Initialize the text-to-audio pipeline
-synthesiser = pipeline("text-to-audio", "facebook/musicgen-small")
+synthesiser = pipeline("text-to-audio", "facebook/musicgen-medium")
 
 # Generate the music
 music = synthesiser(f"{config['prompt']}", forward_params={"do_sample": True})

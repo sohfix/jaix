@@ -3,7 +3,6 @@ import scipy.io.wavfile
 from printy import printy, inputy
 
 config = {
-    "path": inputy('Enter the path to the config file: ', 'y'),
     "prompt": inputy('Enter the prompt: ', 'y'),
 }
 # Initialize the text-to-audio pipeline
