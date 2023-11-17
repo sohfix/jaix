@@ -3,7 +3,7 @@ from transformers import pipeline
 
 from SysManager.systems import check_gpu, check_os, log_text
 
-prompt = check_gpu() + check_os()
+prompt = check_gpu()
 
 with open("song_p.txt", "r") as f:
     for i in range(1, 2):
