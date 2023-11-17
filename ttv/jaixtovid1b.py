@@ -1,8 +1,9 @@
 import time
+
+import torch
 from huggingface_hub import snapshot_download
 from modelscope.outputs import OutputKeys
 from modelscope.pipelines import pipeline
-import torch
 
 # Set default tensor type to CPU tensor
 torch.set_default_tensor_type(torch.FloatTensor)

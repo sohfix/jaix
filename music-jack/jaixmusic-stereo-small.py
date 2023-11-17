@@ -1,9 +1,10 @@
 import time
+
 import scipy.io.wavfile
 from transformers import pipeline
 
 # Assuming check_gpu and log_text are correctly defined in SysManager.systems_check
-from SysManager.systems_check import check_gpu, log_text
+from SysManager.systems import check_gpu, log_text
 
 start = time.time()
 modelj = "stereo-small"

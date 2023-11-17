@@ -1,31 +1,25 @@
-import scipy.io.wavfile
+import scipy.io.wavfile as wav
 from transformers import pipeline
 
-# todo: add a check for GPU
-from SysManager.systems_check import check_gpu, log_text
+from SysManager.systems import check_gpu, check_os, log_text
 
-check_gpu()
-prompt = "robot metal hardstyle bass ethereal"
+prompt = check_gpu() + check_os()
 
 with open("song_p.txt", "r") as f:
-    for i in range(5):
+    for i in range(1, 2):
         while prompt:
-            prompt = f.readline()
+            prompt = f.readline().strip()
             print(prompt)
             log_text(
                 f"test run{i} - prompt:{prompt} >",
             )
 
-            config = {
-                "file": prompt[10:],
-            }
-
             synthesiser = pipeline("text-to-audio", "facebook/musicgen-small")
 
             music = synthesiser(f"{prompt}", forward_params={"do_sample": True})
 
-            scipy.io.wavfile.write(
-                f"music/{config['file'][10:]}.wav".replace(" ", "_"),
+            wav.write(
+                f"music/{str(prompt).replace(' ', '_')}.wav",
                 rate=music["sampling_rate"],
                 data=music["audio"],
             )

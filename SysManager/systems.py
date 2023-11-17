@@ -1,3 +1,4 @@
+import os
 import torch
 
 
@@ -12,6 +13,10 @@ def check_gpu():
 
 def check_ram():
     pass
+
+
+def check_os():
+    return os.environ
 
 
 def check_cpu():
@@ -29,3 +34,16 @@ def log_text(text, filename="logs/testing_log.txt"):
     with open(filename, "a") as file:
         # Write the log entry
         file.write(f"[{current_time}]: {text}\n")
+
+
+def b_rename(directory):
+    current_month_year = datetime.datetime.now().strftime("%m%Y")
+    i = 1
+
+    for filename in os.listdir(directory):
+        new_name = f"{current_month_year}-models-{i}"
+        old_file = os.path.join(directory, filename)
+        new_file = os.path.join(directory, new_name)
+
+        os.rename(old_file, new_file)
+        i += 1

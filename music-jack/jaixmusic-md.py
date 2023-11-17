@@ -4,7 +4,7 @@ import scipy.io.wavfile
 from transformers import pipeline
 
 # todo: add a check for GPU
-from SysManager.systems_check import check_gpu, log_text
+from SysManager.systems import check_gpu, log_text
 
 start = time.time()
 
