@@ -21,8 +21,8 @@ class Audio:
 
     def QuickAdd(self) -> None:
         try:
-            with open(self.input_file, "w") as f:
-                v_temp = f.read().splitlines()
+            with open(self.input_file, "r") as f:
+                v_temp = f.readline()
             for e in v_temp:
                 self.url_list.append(v_temp)
 
@@ -40,7 +40,7 @@ class Audio:
 
 
 class YouTubeAudio(Audio):
-    def __init__(self, a_type=".m4a"):
+    def __init__(self, a_type=".mp3"):
         super().__init__()
         self.type = a_type
 
@@ -53,6 +53,7 @@ class YouTubeAudio(Audio):
 
                 # extract only audio
                 video = JackTube.streams.filter(only_audio=True).first()  # audio
+                print('downloading video: ', JackTube.title)
                 out_file = video.download(
                     output_path="/home/sohfix0/Music/"
                 )  # download

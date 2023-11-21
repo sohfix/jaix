@@ -10,7 +10,7 @@ def shuffle(directory="/home/sohfix0/Music/"):
     pygame.mixer.init()
 
     # Get a list of all audio files in the directory
-    files = [f for f in os.listdir(directory) if f.endswith(".wav")]
+    files = [f for f in os.listdir(directory) if f.endswith(".m4a")]
     if not files:
         print("No audio files found in the directory.")
         return
@@ -30,7 +30,7 @@ def shuffle(directory="/home/sohfix0/Music/"):
 class MusicPlayer:
     def __init__(self, directory):
         self.directory = directory
-        self.files = [f for f in os.listdir(directory) if f.endswith(".wav")]
+        self.files = [f for f in os.listdir(directory) if f.endswith(".m4a")]
         self.current_track = "Welcome to JackPAI!"
         self.paused = False
 
@@ -41,7 +41,7 @@ class MusicPlayer:
         self.load_random_track()
 
     def load_random_track(self):
-        self.current_track = random.choice(self.files)
+        self.current_track = self.files[0]
         pygame.mixer.music.load(os.path.join(self.directory, self.current_track))
 
     def play_pause(self):
@@ -51,7 +51,7 @@ class MusicPlayer:
                 pygame.mixer.music.unpause()
                 self.paused = False
                 print(f"Resumed: {self.current_track}")
-            else:
+            elif not self.paused:
                 pygame.mixer.music.pause()
                 self.paused = True
                 print(f"Paused: {self.current_track}")

@@ -6,7 +6,7 @@ from music import MusicPlayer, YouTube, shuffle
 
 name = ""
 BANNER = f"               Welcome to the JackPAI {name}!                 "
-
+stoi = YouTubeAudio()
 
 # Animation function for the banner
 def animate_banner():
@@ -20,8 +20,7 @@ def animate_banner():
 # Define callback functions for each button
 def obp_1(arg=1):
     if arg == -1:
-        stdin = Audio()
-        stdin.QuickAdd()
+        stoi.Add("https://www.youtube.com/watch?v=Avc_90h6m1g")
     else:
         print("btn 1")
 
@@ -33,10 +32,8 @@ def obp_2():
 
 def obp_3(arg=1):
     if arg == -1:
-        stdout = YouTubeAudio()
-        stdout.Download()
-    else:
-        print("btn 3")
+        stoi.Download()
+        print(f'{stoi.title_list}')
 
 
 def obp_4():
