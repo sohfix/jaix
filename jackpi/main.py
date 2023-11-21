@@ -1,11 +1,12 @@
 import tkinter as tk
 from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
-from music import MusicPlayer
+from music import play_music, pause_music
 
+# todo: add a menu bar /    check some stuff
 name = ""
 BANNER = f"               Welcome to the JackPAI {name}!                 "
-
+filepath = None
 
 # Animation function for the banner
 def animate_banner():
@@ -22,12 +23,11 @@ def obp_1(arg=1):
 
 
 def obp_2():
-    music = MusicPlayer("/home/sohfix0/Music/")
-    music.play_pause()
+    play_music(filepath)
 
 
 def obp_3(arg=1):
-    pass
+    pause_music(filepath)
 
 
 def obp_4():
