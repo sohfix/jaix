@@ -42,34 +42,6 @@ def obp_6():
     pass
 
 
-# Function to open the settings window
-def open_settings():
-    settings_window = Toplevel(root)
-    settings_window.title("Settings")
-    settings_window.geometry("300x200")
-
-    mode_var = IntVar(value=0)
-    theme_var = IntVar(value=0)
-
-    Checkbutton(settings_window, text="Dark Mode", variable=mode_var).grid(
-        row=0, sticky="w"
-    )
-    Checkbutton(settings_window, text="Light Mode", variable=mode_var).grid(
-        row=1, sticky="w"
-    )
-    Checkbutton(settings_window, text="BerryTap Theme", variable=theme_var).grid(
-        row=2, sticky="w"
-    )
-    Checkbutton(settings_window, text="PantherScreen Theme", variable=theme_var).grid(
-        row=3, sticky="w"
-    )
-    Checkbutton(settings_window, text="PixelPoint Theme", variable=theme_var).grid(
-        row=4, sticky="w"
-    )
-    Checkbutton(settings_window, text="TouchScape Theme", variable=theme_var).grid(
-        row=5, sticky="w"
-    )
-
 
 # Function to update the date and time display
 def update_time():
@@ -82,15 +54,6 @@ def update_time():
 root = tk.Tk()
 root.title("JackPAI")
 root.geometry("800x480")
-
-# Create a menu bar
-menu_bar = Menu(root)
-root.config(menu=menu_bar)
-
-# Create a 'File' dropdown menu
-file_menu = Menu(menu_bar, tearoff=0)
-file_menu.add_command(label="Settings", command=open_settings)
-menu_bar.add_cascade(label="File", menu=file_menu)
 
 # Create a banner label with animated text
 banner_text = f" {BANNER} "
@@ -125,3 +88,5 @@ update_time()
 
 # Start the Tkinter event loop
 root.mainloop()
+# Enable the X button to fucking work
+root.quit()
