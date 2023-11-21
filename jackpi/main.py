@@ -1,7 +1,7 @@
 import tkinter as tk
 from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
-
+from JackTube import YouTubeAudio, Audio
 from music import MusicPlayer, YouTube, shuffle
 
 name = ""
@@ -19,8 +19,9 @@ def animate_banner():
 
 # Define callback functions for each button
 def obp_1():
-    # shuffle()
-    pass
+    stdin = Audio()
+    audiout = YouTubeAudio()
+    stdin.QuickAdd()
 
 
 def obp_2():
@@ -29,7 +30,8 @@ def obp_2():
 
 
 def obp_3():
-    pass
+    stdout = YouTubeAudio()
+    stdout.Download()
 
 
 def obp_4():
@@ -76,10 +78,21 @@ button_functions = [obp_1, obp_2, obp_3, obp_4, obp_5, obp_6]
 for i in range(3):  # 3 columns wide
     frame.grid_columnconfigure(i, weight=1)
     for j in range(2):  # 2 rows long
+        x = j * 3 + i + 1
+        def sw(ar):
+            switch_dict = {
+                1: "Load Playlist",
+                2: "Play/Pause",
+                3: "Download Playlist",
+                4: "xxx",
+                5: "xxx",
+                6: "xxx",
+            }
+            return switch_dict.get(ar, "Invalid option")
         frame.grid_rowconfigure(j, weight=1)
         button = tk.Button(
             frame,
-            text=f"{'press play' if j * 3 + i + 1 == 2 else 'empty'}",
+            text=f"{sw(x)}",
             command=button_functions[j * 3 + i],
         )
         button.grid(row=j, column=i, sticky="nsew", padx=5, pady=5)

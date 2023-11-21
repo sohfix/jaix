@@ -53,7 +53,9 @@ class YouTubeAudio(Audio):
 
                 # extract only audio
                 video = JackTube.streams.filter(only_audio=True).first()  # audio
-                out_file = video.download(output_path="music/songs/")  # download
+                out_file = video.download(
+                    output_path="/home/sohfix0/Music/"
+                )  # download
 
                 # save the file
                 base, _ = os.path.splitext(out_file)
