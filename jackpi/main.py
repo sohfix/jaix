@@ -1,12 +1,11 @@
 import tkinter as tk
 from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
-from JackTube import YouTubeAudio, Audio
-from music import MusicPlayer, YouTube, shuffle
+from music import MusicPlayer
 
 name = ""
 BANNER = f"               Welcome to the JackPAI {name}!                 "
-stoi = YouTubeAudio()
+
 
 # Animation function for the banner
 def animate_banner():
@@ -19,10 +18,7 @@ def animate_banner():
 
 # Define callback functions for each button
 def obp_1(arg=1):
-    if arg == -1:
-        stoi.Add("https://www.youtube.com/watch?v=Avc_90h6m1g")
-    else:
-        print("btn 1")
+    pass
 
 
 def obp_2():
@@ -31,9 +27,7 @@ def obp_2():
 
 
 def obp_3(arg=1):
-    if arg == -1:
-        stoi.Download()
-        print(f'{stoi.title_list}')
+    pass
 
 
 def obp_4():
