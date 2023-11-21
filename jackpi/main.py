@@ -18,10 +18,12 @@ def animate_banner():
 
 
 # Define callback functions for each button
-def obp_1():
-    stdin = Audio()
-    audiout = YouTubeAudio()
-    stdin.QuickAdd()
+def obp_1(arg=1):
+    if arg == -1:
+        stdin = Audio()
+        stdin.QuickAdd()
+    else:
+        print("btn 1")
 
 
 def obp_2():
@@ -29,9 +31,12 @@ def obp_2():
     music.play_pause()
 
 
-def obp_3():
-    stdout = YouTubeAudio()
-    stdout.Download()
+def obp_3(arg=1):
+    if arg == -1:
+        stdout = YouTubeAudio()
+        stdout.Download()
+    else:
+        print("btn 3")
 
 
 def obp_4():
@@ -79,6 +84,7 @@ for i in range(3):  # 3 columns wide
     frame.grid_columnconfigure(i, weight=1)
     for j in range(2):  # 2 rows long
         x = j * 3 + i + 1
+
         def sw(ar):
             switch_dict = {
                 1: "Load Playlist",
@@ -89,6 +95,7 @@ for i in range(3):  # 3 columns wide
                 6: "xxx",
             }
             return switch_dict.get(ar, "Invalid option")
+
         frame.grid_rowconfigure(j, weight=1)
         button = tk.Button(
             frame,
