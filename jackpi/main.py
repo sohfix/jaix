@@ -1,12 +1,15 @@
 import tkinter as tk
 from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
-from music import play_music, pause_music
+
+from config import *
+from music import pause_music, play_music
 
 # todo: add a menu bar /    check some stuff
 name = ""
 BANNER = f"               Welcome to the JackPAI {name}!                 "
-filepath = None
+filepath = file_route
+
 
 # Animation function for the banner
 def animate_banner():
