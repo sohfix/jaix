@@ -5,7 +5,7 @@ import pygame
 from pytube import YouTube
 
 
-def shuffle(directory="/home/sohfix0/Music/"):
+def shuffle(directory="/home/sohfix/Music/"):
     # Initialize pygame mixer
     pygame.mixer.init()
 
