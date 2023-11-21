@@ -16,6 +16,7 @@ audiocraft @ git+https://github.com/facebookresearch/audiocraft.git@5905d2ef2526
 audioread==3.0.1
 av==11.0.0
 black==23.11.0
+blinker==1.7.0
 blis==0.7.11
 Brotli @ file:///work/ci_py311/brotli-split_1676830125088/work
 cachetools==5.3.2
@@ -46,6 +47,7 @@ fastapi==0.104.1
 ffmpy==0.3.1
 filelock==3.13.1
 flashy==0.0.2
+Flask==3.0.0
 flatbuffers==23.5.26
 fonttools==4.44.1
 frozenlist==1.4.0
@@ -71,6 +73,7 @@ importlib-metadata==6.8.0
 importlib-resources==6.1.1
 invisible-watermark==0.2.0
 isort==5.12.0
+itsdangerous==2.1.2
 Jinja2 @ file:///work/ci_py311/jinja2_1676823587943/work
 jmespath==0.10.0
 joblib==1.3.2
@@ -143,6 +146,7 @@ pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 pycryptodome==3.19.0
 pydantic==1.10.13
 pydub==0.25.1
+pygame==2.5.2
 pyOpenSSL @ file:///croot/pyopenssl_1690223430423/work
 pyparsing==3.1.1
 PySocks @ file:///work/ci_py311/pysocks_1676822712504/work

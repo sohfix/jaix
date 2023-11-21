@@ -2,7 +2,10 @@ import tkinter as tk
 from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
 
-BANNER = "Welcome to the JackPAIy.1.1!"
+from music import shuffle
+
+name = ""
+BANNER = f"               Welcome to the JackPAI {name}!                 "
 
 
 # Animation function for the banner
@@ -10,13 +13,13 @@ def animate_banner():
     text = banner_label.cget("text")
     banner_label.config(text=text[1:] + text[0])
     root.after(
-        250, animate_banner
+        200, animate_banner
     )  # Adjust the speed of animation by changing the time here
+
 
 # Define callback functions for each button
 def obp_1():
-    pass
-# scp sohfix@192.168.1.24:~/Documents/models/jaix/jackpi/main.py 192.168.1.xxx:~/xxx/xxx/xxx
+    shuffle()
 
 
 def obp_2():
@@ -77,7 +80,7 @@ def update_time():
 
 # Create the main application window
 root = tk.Tk()
-root.title("Responsive App")
+root.title("JackPAI")
 root.geometry("800x480")
 
 # Create a menu bar
