@@ -2,7 +2,7 @@ import tkinter as tk
 from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
 
-from music import shuffle
+from music import MusicPlayer, YouTube, shuffle
 
 name = ""
 BANNER = f"               Welcome to the JackPAI {name}!                 "
@@ -19,11 +19,13 @@ def animate_banner():
 
 # Define callback functions for each button
 def obp_1():
-    shuffle()
+    # shuffle()
+    pass
 
 
 def obp_2():
-    pass
+    music = MusicPlayer("/home/sohfix0/Music/")
+    music.play_pause()
 
 
 def obp_3():
@@ -40,7 +42,6 @@ def obp_5():
 
 def obp_6():
     pass
-
 
 
 # Function to update the date and time display
@@ -77,7 +78,9 @@ for i in range(3):  # 3 columns wide
     for j in range(2):  # 2 rows long
         frame.grid_rowconfigure(j, weight=1)
         button = tk.Button(
-            frame, text=f"Button {j * 3 + i + 1}", command=button_functions[j * 3 + i]
+            frame,
+            text=f"{'press play' if j * 3 + i + 1 == 2 else 'empty'}",
+            command=button_functions[j * 3 + i],
         )
         button.grid(row=j, column=i, sticky="nsew", padx=5, pady=5)
 

@@ -1,6 +1,8 @@
 import os
 import random
+
 import pygame
+from pytube import YouTube
 
 
 def shuffle(directory="/home/sohfix0/Music/"):
@@ -28,8 +30,8 @@ def shuffle(directory="/home/sohfix0/Music/"):
 class MusicPlayer:
     def __init__(self, directory):
         self.directory = directory
-        self.files = [f for f in os.listdir(directory) if f.endswith(".mp3")]
-        self.current_track = None
+        self.files = [f for f in os.listdir(directory) if f.endswith(".wav")]
+        self.current_track = "Welcome to JackPAI!"
         self.paused = False
 
         if not self.files:
@@ -63,3 +65,16 @@ class MusicPlayer:
         self.load_random_track()
         pygame.mixer.music.play()
         print(f"Playing: {self.current_track}")
+
+    def song_title(self):
+        return self.current_track
+
+
+class YouTube:
+    def __init__(self, url):
+        self.url = url
+
+    def download(self):
+        yt = YouTube(self.url)
+        stream = yt.streams.get_highest_resolution()
+        stream.download()
