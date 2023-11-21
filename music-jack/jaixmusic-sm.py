@@ -1,7 +1,7 @@
 import scipy.io.wavfile as wav
 from transformers import pipeline
 
-from SysManager.systems import check_gpu, check_os, log_text
+from SysManager.systems import check_gpu, log_text
 
 prompt = check_gpu()
 
@@ -19,7 +19,7 @@ with open("song_p.txt", "r") as f:
             music = synthesiser(f"{prompt}", forward_params={"do_sample": True})
 
             wav.write(
-                f"music/{str(prompt).replace(' ', '_')}.wav",
+                f"/home/sohfix0/Music/{str(prompt).replace(' ', '_')}.wav",
                 rate=music["sampling_rate"],
                 data=music["audio"],
             )
