@@ -1,27 +1,27 @@
 import os
-
+from config import *
 import pygame
 
 # Initialize Pygame
 pygame.mixer.init()
 
 
-def play_music(file_path):
+def play_music(fs):
     """
     Plays the music file specified by the file path.
     Supports .mp3 and .m4a file formats.
     """
-    if not os.path.exists(file_path):
-        print(f"File not found: {file_path}")
+    if not os.path.exists(fs):
+        print(f"File not found: {fs}")
         return
 
-    if not file_path.endswith(("", ".wav")):
+    if not fs.endswith(("", ".wav")):
         print("Unsupported file format. Please use .mp3 or .m4a")
         return
 
-    pygame.mixer.music.load(file_path)
+    pygame.mixer.music.load(fs)
     pygame.mixer.music.play()
-    print(f"Playing: {file_path}")
+    print(f"Playing: {fs}")
 
 
 def pause_music():
@@ -37,8 +37,3 @@ def pause_music():
             print("Music unpaused.")
     else:
         print("No music is playing.")
-
-
-# Example usage
-# play_music('path/to/your/musicfile.mp3')
-# pause_music()

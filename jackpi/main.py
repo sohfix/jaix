@@ -26,10 +26,12 @@ def obp_1(arg=1):
 
 
 def obp_2():
+    filepath = file_route('sohfix0')
     play_music(filepath)
 
 
 def obp_3(arg=1):
+    filepath = file_route
     pause_music(filepath)
 
 
