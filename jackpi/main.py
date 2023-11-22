@@ -3,7 +3,7 @@ from datetime import datetime
 from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
 
 from config import *
-from music import pause_music, play_music
+from music import pause, play
 
 # todo: add a menu bar /    check some stuff
 name = ""
@@ -27,12 +27,11 @@ def obp_1(arg=1):
 
 def obp_2():
     filepath = file_route('sohfix0')
-    play_music(filepath)
+    play(filepath)
 
 
-def obp_3(arg=1):
-    filepath = file_route
-    pause_music(filepath)
+def obp_3():
+    pause()
 
 
 def obp_4():
@@ -83,9 +82,9 @@ for i in range(3):  # 3 columns wide
 
         def sw(ar):
             switch_dict = {
-                1: "Load Playlist",
+                1: "xxx",
                 2: "Play/Pause",
-                3: "Download Playlist",
+                3: "Stop [not pause]",
                 4: "xxx",
                 5: "xxx",
                 6: "xxx",

@@ -6,7 +6,7 @@ import pygame
 pygame.mixer.init()
 
 
-def play_music(fs):
+def play(fs):
     """
     Plays the music file specified by the file path.
     Supports .mp3 and .m4a file formats.
@@ -24,7 +24,7 @@ def play_music(fs):
     print(f"Playing: {fs}")
 
 
-def pause_music():
+def pause():
     """
     Pauses the currently playing music. If the music is already paused, it will unpause it.
     """
