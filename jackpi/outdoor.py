@@ -12,7 +12,7 @@ def get_weather_data(city, api_key):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        weather_data = [# OpenWeatherMap does not provide direct precipitation data
+        weather_data = [  # OpenWeatherMap does not provide direct precipitation data
             f"temp {data['main']['temp']}°C",
             f"wind_sp {data['wind']['speed']} km/h",
             f'wind_dir {data["wind"]["deg"]}',
