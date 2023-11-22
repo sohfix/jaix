@@ -146,6 +146,7 @@ pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 pycryptodome==3.19.0
 pydantic==1.10.13
 pydub==0.25.1
+pyfiglet==1.0.2
 pygame==2.5.2
 pyOpenSSL @ file:///croot/pyopenssl_1690223430423/work
 pyparsing==3.1.1
@@ -153,6 +154,8 @@ PySocks @ file:///work/ci_py311/pysocks_1676822712504/work
 python-dateutil==2.8.2
 python-multipart==0.0.6
 pytorch-lightning==2.1.1
+pyttsx3==2.90
+pytube==15.0.0
 pytz==2023.3.post1
 PyWavelets==1.4.1
 PyYAML @ file:///croot/pyyaml_1698096049011/work

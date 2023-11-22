@@ -2,13 +2,15 @@ import tkinter as tk
 from datetime import datetime
 from tkinter import Label
 
+import outdoor
 from config import *
-from music import pause, play
+from JackUtilities import tts
+from music import pause, play, resume
 
 # todo: add a menu bar /    check some stuff
 name = ""
 BANNER = f"               Welcome to the JackPAI {name}!                 "
-filepath = file_route
+apikey = "2980efa1d58e8dc13a69236bb16f37da"
 
 
 # Animation function for the banner
@@ -22,11 +24,11 @@ def animate_banner():
 
 # Define callback functions for each button
 def obp_1(arg=1):
-    pass
+    resume()
 
 
 def obp_2():
-    filepath = file_route('sohfix0')
+    filepath = file_route("sohfix0")
     play(filepath)
 
 
@@ -35,7 +37,10 @@ def obp_3():
 
 
 def obp_4():
-    pass
+    print(apikey)
+    data = outdoor.get_weather_data("chicago", apikey)
+    speaker = tts()
+    speaker.Speak(data)
 
 
 def obp_5():
@@ -82,12 +87,12 @@ for i in range(3):  # 3 columns wide
 
         def sw(ar):
             switch_dict = {
-                1: "xxx",
-                2: "Play/Shuf",
-                3: "Stop",
-                4: "xxx",
-                5: "xxx",
-                6: "xxx",
+                1: "Resume",
+                2: "Play/Shuffle",
+                3: "Pause",
+                4: "Creepy\n\nWeather\n\nReport",
+                5: "*********",
+                6: "*********",
             }
             return switch_dict.get(ar, "Invalid option")
 

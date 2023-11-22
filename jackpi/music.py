@@ -1,6 +1,7 @@
 import os
-from config import *
+
 import pygame
+from config import *
 
 # Initialize Pygame
 pygame.mixer.init()
@@ -16,7 +17,9 @@ def play(fs):
         return
 
     if not fs.endswith(("", ".wav")):
-        print("Unsupported file format. Please use .mp3 or .m4a")
+        print(
+            f"Unsupported file format. {fs[:-4]} not supported. Supported formats: ALL"
+        )
         return
 
     pygame.mixer.music.load(fs)
@@ -35,5 +38,19 @@ def pause():
         else:
             pygame.mixer.music.unpause()
             print("Music unpaused.")
+    else:
+        print("No music is playing.")
+
+
+def resume():
+    """
+    Resumes the currently paused music.
+    """
+    if not pygame.mixer.music.get_busy():
+        if pygame.mixer.music.get_pos() >= 0:
+            pygame.mixer.music.unpause()
+            print("Music resumed.")
+        else:
+            print("Music is not paused.")
     else:
         print("No music is playing.")
