@@ -83,8 +83,8 @@ for i in range(3):  # 3 columns wide
         def sw(ar):
             switch_dict = {
                 1: "xxx",
-                2: "Play/Pause",
-                3: "Stop [not pause]",
+                2: "Play/Shuf",
+                3: "Stop",
                 4: "xxx",
                 5: "xxx",
                 6: "xxx",
