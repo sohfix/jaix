@@ -1,6 +1,6 @@
 import tkinter as tk
 from datetime import datetime
-from tkinter import Checkbutton, IntVar, Label, Menu, Toplevel
+from tkinter import Label
 
 from config import *
 from music import pause, play
